@@ -12,12 +12,12 @@ class LinkedList:
 		self.tail = None
 
 		for x in CoolList:
-			self.add(x) #calls the function "add" for each value in the tuple
+			self.add(x)
 
 	def add(self, data):
-		a = Node(data) #calls node for each thing in the tuple
+		a = Node(data)
 		
-		if self.head is None: #finds the leading value
+		if self.head is None:
 			self.head = a
 			self.tail = a
 			return
