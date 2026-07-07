@@ -76,6 +76,35 @@ class LinkedList:
 				return True
 			current = current.next
 
+	def get(self, index):
+		x = self.head
+		count = 1
+		while x is not None:
+			if count == index:
+				print("______________")
+				return x.data
+			x = x.next
+			count += 1
+		return None
+
+
+	def indexOf(self, value):
+		count = 1
+		x = self.head
+
+		while x is not None:
+			if x.data == value:
+				return count
+			x = x.next
+			count += 1
+		print("______________")
+		return None
+
+	def clear(self):
+		self.head = None
+		self.tail = None
+		return
+
 
 ist = LinkedList(1, 2, 3, 4, 5, 6, 7, 8)
 print(ist.search(5))
@@ -85,4 +114,9 @@ ist.printreverselist()
 ist.prepend(5)
 ist.printlist()
 ist.remove(1)
+ist.printlist()
+
+print(ist.get(5))
+print(ist.indexOf(1))
+ist.clear()
 ist.printlist()
