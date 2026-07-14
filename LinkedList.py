@@ -105,6 +105,60 @@ class LinkedList:
 		self.tail = None
 		return
 
+	def removes(self, index):
+		current = self.head
+		count = 1 
+
+		while current is not None:
+			if count == index:
+				if current.previous is not None:
+					current.previous.next = current.next
+				else:
+					self.head = current.next
+				if current.next is not None:
+					current.next.previous = current.previous
+				else:
+					self.tail = current.previous
+				return True
+			current = current.next
+			count += 1
+		return False
+
+	def replace(self, index, value):
+		current = self.head
+		count = 1
+
+		while current is not None:
+			if count == index:
+				current.data = value
+				return True
+			current = current.next
+			count += 1
+		return False
+
+	def insert(self, index, value):
+		if index <= 1:
+			self.prepend(value)
+			return
+
+		a = Node(value)
+		current = self.head
+		count = 1
+
+		while current is not None:
+			if count == index:
+				a.previous = current.previous
+				a.next = current
+
+				if current.previous is not None:
+					current.previous.next = a 
+				current.previous = a
+				return
+			current = current.next
+			count += 1
+		self.add(value)
+
+
 
 ist = LinkedList(1, 2, 3, 4, 5, 6, 7, 8)
 print(ist.search(5))
@@ -118,5 +172,9 @@ ist.printlist()
 
 print(ist.get(5))
 print(ist.indexOf(1))
-ist.clear()
+ist.replace(3, 4)
+ist.printlist()
+ist.removes(1)
+ist.printlist()
+ist.insert(2, 9)
 ist.printlist()
