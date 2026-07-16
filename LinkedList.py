@@ -7,12 +7,21 @@ class Node:
 
 class LinkedList:
 
+
 	def __init__(self, *CoolList):
 		self.head = None
 		self.tail = None
 
 		for x in CoolList:
 			self.add(x)
+
+	def __len__(self):
+			count = 0
+			current = self.head
+			while current is not None:
+				count += 1
+				current = current.next
+			return count
 
 	def add(self, data):
 		a = Node(data)
@@ -80,7 +89,7 @@ class LinkedList:
 		x = self.head
 		count = 1
 		while x is not None:
-			if count == index:
+			if count == index + 1:
 				print("______________")
 				return x.data
 			x = x.next
@@ -93,7 +102,7 @@ class LinkedList:
 		x = self.head
 
 		while x is not None:
-			if x.data == value:
+			if x.data == value + 1:
 				return count
 			x = x.next
 			count += 1
@@ -110,7 +119,7 @@ class LinkedList:
 		count = 1 
 
 		while current is not None:
-			if count == index:
+			if count == index + 1:
 				if current.previous is not None:
 					current.previous.next = current.next
 				else:
@@ -129,7 +138,7 @@ class LinkedList:
 		count = 1
 
 		while current is not None:
-			if count == index:
+			if count == index + 1:
 				current.data = value
 				return True
 			current = current.next
@@ -137,7 +146,7 @@ class LinkedList:
 		return False
 
 	def insert(self, index, value):
-		if index <= 1:
+		if index == 1:
 			self.prepend(value)
 			return
 
@@ -145,8 +154,9 @@ class LinkedList:
 		current = self.head
 		count = 1
 
+
 		while current is not None:
-			if count == index:
+			if count == index + 1:
 				a.previous = current.previous
 				a.next = current
 
@@ -160,21 +170,21 @@ class LinkedList:
 
 
 
+
 ist = LinkedList(1, 2, 3, 4, 5, 6, 7, 8)
-print(ist.search(5))
 
 ist.printlist()
-ist.printreverselist()
-ist.prepend(5)
-ist.printlist()
-ist.remove(1)
-ist.printlist()
-
-print(ist.get(5))
+print("___")
 print(ist.indexOf(1))
-ist.replace(3, 4)
+'''
+print(ist.get(5)) *
+print(ist.indexOf(1))
+ist.replace(3, 4) *
 ist.printlist()
-ist.removes(1)
+ist.removes(1) *
 ist.printlist()
-ist.insert(2, 9)
+ist.insert(2, 9) *
 ist.printlist()
+print("_____")
+print(len(ist))
+'''
