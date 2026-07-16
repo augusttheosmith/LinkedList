@@ -146,7 +146,8 @@ class LinkedList:
 		return False
 
 	def insert(self, index, value):
-		if index == 1:
+
+		if index == 0:
 			self.prepend(value)
 			return
 
@@ -174,8 +175,8 @@ class LinkedList:
 ist = LinkedList(1, 2, 3, 4, 5, 6, 7, 8)
 
 ist.printlist()
-print("___")
-print(ist.indexOf(2))
+ist.insert(1, 20)
+ist.printlist()
 '''
 print(ist.get(5)) *
 print(ist.indexOf(1))
