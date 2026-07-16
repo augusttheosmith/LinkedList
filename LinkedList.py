@@ -98,11 +98,11 @@ class LinkedList:
 
 
 	def indexOf(self, value):
-		count = 1
+		count = 0
 		x = self.head
 
 		while x is not None:
-			if x.data == value + 1:
+			if x.data == value:
 				return count
 			x = x.next
 			count += 1
@@ -175,7 +175,7 @@ ist = LinkedList(1, 2, 3, 4, 5, 6, 7, 8)
 
 ist.printlist()
 print("___")
-print(ist.indexOf(1))
+print(ist.indexOf(2))
 '''
 print(ist.get(5)) *
 print(ist.indexOf(1))
