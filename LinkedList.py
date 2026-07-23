@@ -171,12 +171,12 @@ class LinkedList:
 
 
 
-
 ist = LinkedList(1, 2, 3, 4, 5, 6, 7, 8)
-
+'''
 ist.printlist()
 ist.insert(1, 20)
 ist.printlist()
+'''
 '''
 print(ist.get(5)) *
 print(ist.indexOf(1))
